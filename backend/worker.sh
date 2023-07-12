@@ -1,0 +1,1 @@
+celery -A backend.celery worker --loglevel=info -P gevent

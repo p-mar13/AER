@@ -1,0 +1,74 @@
+.tableData {
+    display: block;
+    margin: 0 auto;
+}
+
+.border {
+  border: 3px solid #fff;
+  background-color: #fff;
+  padding: 15px 10px;
+  background-position: 0%;
+  width: 50%;
+  margin-left: 26%;
+  opacity:0.8;
+}
+
+.liner {
+  display: inline;
+  width:150%;
+  background-color:aqua;
+}
+
+.removal {
+  position:relative;
+  vertical-align: top;
+  bottom: 50%;
+}
+
+.buttons {
+  margin-top: 15%;
+}
+
+.clicked {
+  display: inline;
+  letter-spacing: 3px;
+  background-color: #6d6c6c;
+    border: none;
+    color: a3a1a1;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 7px; 
+}
+
+.unclicked {
+  display: inline;
+  letter-spacing: 3px;
+  background-color: #a3a1a1;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 7px;
+}
+
+.data {
+  opacity: 1;
+}
+
+.container {
+  position: relative; width: 0; height: 0;
+}
+
+.noFiles {
+  margin-bottom: 2000%;
+}
+
+.headerTable{
+  text-align: center;
+}
