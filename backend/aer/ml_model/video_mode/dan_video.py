@@ -3,8 +3,7 @@ import numpy as np
 import cv2
 import datetime
 import torch
-from torchvision import transforms
-from aer.ml_model.video_mode.network.dan import DAN
+from torchvision import transforms, models
 
 class Model():
     def __init__(self):
@@ -16,7 +15,7 @@ class Model():
                                     std=[0.229, 0.224, 0.225])
                                 ])
         self.labels = ['neutral', 'happy', 'sad', 'surprise', 'fear', 'disgust', 'anger', 'contempt'] # All emotions that can be recognized
-        self.model = DAN(num_head=4, num_class=8, pretrained=False)
+        self.model=  models.resnet18(pretrained=True)
         checkpoint = torch.load(r'aer\ml_model\image_mode\checkpoints\affecnet8_epoch5_acc0.6209.pth',
             map_location=self.device)
         self.model.load_state_dict(checkpoint['model_state_dict'],strict=True)
