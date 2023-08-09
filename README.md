@@ -1,5 +1,5 @@
 # AER - Automated Facial Recognizer
-The functionality of Automated Facial Recognizer web application is to use a facial emotion recognition model to analyze selected frames and classify the emotions of all detected faces. It includes an additional image mode, so the user can test the simpler version. In both cases, a pre-trained machine learning model is used. The application by default uses DAN model, but it can easily be changed to a different one.
+The functionality of Automated Facial Recognizer web application is to use a facial emotion recognition model to analyze selected frames and classify the emotions of all detected faces. It includes an additional image mode, so the user can test the simpler version. In both cases, a pre-trained machine learning model is used. The application by default uses DAN model, but it can easily be changed to a different one.  
 The web application is dedicated to being used by scholars to help in their research, as well as people having problems with emotion identification, psychologists, marketers, and generally people interested in FER technology. As only visuals are processed by the model, uploaded video clips do not have to include audio. Though the results are not always completely accurate, up to eight emotions can be recognized in the media.
 The application is a part of my thesis "Automated tool for facial emotion recognition in video".
 
@@ -14,7 +14,8 @@ The application is a part of my thesis "Automated tool for facial emotion recogn
 
 ---
 
-### Installation instruction:
+## Installation instruction:
+### Backend:
 1.	Install a virtual environment:
 ```
 pip install virtualenv
@@ -35,32 +36,38 @@ pip install -r reguirements.txt
 ```
 deactivate
 ```
+
+### Frontend:
+1.	Install all defined dependencies for React:
+```
+npm install
+```
 ---
 
-### Run instruction:
+## Run instruction:
 Once the installation was successful, the application can be started by running script run_application.sh available in main folder of the whole app.
-To run the application manually:
-1.	Start frontend React.js server
+To run the application manually:  
+1.	Start frontend React.js server  
 Current directory: */aer_web/frontend
 ```
 npm start
 ``` 
-2.	Migrate mock data 
+2.	Migrate mock data  
 Current directory: */aer_web/backend
 ```
 python manage.py migrate
 ```
-3.	Start Django server
+3.	Start Django server  
 Current directory: */aer_web/backend
 ```
 python manage.py runserver
 ```
-4.	Celery worker can be initialized manually using the following command:
+4.	Celery worker can be initialized manually using the following command:  
 For UNIX OS:
 ```
 celery -A backend.celery worker –loglevel=ingo -P
 ```
-For Windows OS (with prerequisite of gevent pack being installed on the machine):
+For Windows OS (with prerequisite of gevent pack being installed on the machine):  
 ```
 celery -A backend.celery worker –loglevel=ingo -P gevent
 ```
