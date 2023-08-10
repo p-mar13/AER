@@ -2,7 +2,14 @@
 # Filename: run_application.sh
 dir=$(/usr/bin/pwd)
 
-cd $dir/backend
+cd $dir/frontend
+
+start "react.sh"
+
+cd ..
+cd backend
+
+start "django.sh"
 
 start "worker.sh"
 
